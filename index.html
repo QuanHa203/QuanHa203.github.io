@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web the band</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -30,6 +31,7 @@
                 </li>
             </ul>
             <div class="header-search-bnt"><i class="ti-search"></i></div>
+            <div id="js-menu-btn" class="header-menu-bnt"><i class="ti-menu"></i></div>
         </div>
         <!-- Slider -->
         <div id="slider">
@@ -174,6 +176,30 @@
     </div>
 </body>
 </html>
+<!-- Menu scrip -->
+<script>
+    const header = document.getElementById('header')
+    const menu_btn = document.getElementById('js-menu-btn')
+    const header_height = header.clientHeight
+
+    menu_btn.onclick = function() {
+        const is_close = header.clientHeight === header_height
+        if(is_close) {
+            header.style.height = 'auto'
+        }
+        else {
+            header.style.height = null
+        }
+    }
+
+    const menu_Items = document.querySelectorAll('#nav li a[href*="#"]')
+    for(var i = 0 ; i < menu_Items.length ; i++) {
+        var menu_Item = menu_Items[i] 
+        menu_Item.onclick = function() {
+            header.style.height = null
+        }
+    }
+</script>
 
 <!-- modal scrip -->
 <script>
