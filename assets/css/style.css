@@ -76,7 +76,6 @@ html {
     background-color: #000;
     height: 46px;
     z-index: 1;
-    overflow: hidden;
 }
 
 #nav {
@@ -155,7 +154,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background-image: url('/assets/img/slide/chicago.jpg');
+    background-image: url('../img/slide/chicago.jpg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -178,6 +177,7 @@ html {
 .slider-sub-heading {
     font-size: 15px;
     font-weight: 700;
+    text-shadow: 0 0 1px #000;
 }
 
 
