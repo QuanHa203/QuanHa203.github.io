@@ -48,15 +48,15 @@
                 <p class="sub-heading-section">We love music</p>
                 <p class="text-paragraph">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="row about-member">
-                    <div class="col col-third center-text">
+                    <div class="col col-third center-text mobile-member">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/content/band-member.jpg" alt="" class="member-pic">
                     </div>
-                    <div class="col col-third center-text">
+                    <div class="col col-third center-text mobile-member">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/content/band-member.jpg" alt="" class="member-pic">
                     </div>
-                    <div class="col col-third center-text">
+                    <div class="col col-third center-text mobile-member">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/content/band-member.jpg" alt="" class="member-pic">
                     </div>
@@ -118,10 +118,10 @@
                     <div class="col col-half contact-right">
                         <form action="">
                             <div class="row  ">
-                                <div class="col col-half ">
+                                <div class="col col-half mobile-form-control ">
                                     <input type="text" placeholder="Name" required class="form-control">
                                 </div>
-                                <div class="col col-half">
+                                <div class="col col-half mobile-form-control">
                                     <input type="email" placeholder="Email" required class="form-control">
                                 </div>
                             </div>
@@ -176,9 +176,10 @@
     </div>
 </body>
 </html>
+
 <!-- Menu scrip -->
 <script>
-    const header = document.getElementById('header')
+    const header = document.getElementById('header');
     const menu_btn = document.getElementById('js-menu-btn')
     const header_height = header.clientHeight
 
@@ -194,15 +195,26 @@
 
     const menu_Items = document.querySelectorAll('#nav li a[href*="#"]')
     for(var i = 0 ; i < menu_Items.length ; i++) {
-        var menu_Item = menu_Items[i] 
-        menu_Item.onclick = function() {
+         var menu_Item = menu_Items[i] 
+
+        menu_Item.onclick = function(event)
+         {
+            var is_parent_menu = this.nextElementSibling && this.nextElementSibling.classList.contains('sub-nav')
+            if (is_parent_menu)
+             {
+                event.preventDefault()
+             }
+            else
+             {
             header.style.height = null
-        }
+             }
+          }
     }
 </script>
 
-<!-- modal scrip -->
+<!-- Modal scrip -->
 <script>
+
     const buyBtns = document.querySelectorAll('.js-buy-btn')
     const modal = document.querySelector('.js-modal')
     const modal_exit = document.querySelector('.js-modal-exit')
@@ -226,4 +238,5 @@
     modal_container.addEventListener('click',function(event) {
         event.stopPropagation()
     })
+
 </script>

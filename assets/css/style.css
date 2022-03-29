@@ -226,7 +226,7 @@ html {
 }
 
 .member-pic {
-    max-width: 150px;
+    width: 150px;
     border-radius: 4px;
 }
 
@@ -406,26 +406,25 @@ html {
     position: relative;
     width: 900px;
     height: 440px;
-    transform: translateY(-65px);
     background-color: #fff;
     margin: 0 26px;
     animation: modal-animation ease 1s;
 }
 
-.modal-exit {
+.modal-container .modal-exit {
     position: absolute;
     right: 0;
     color: #fff;
     padding: 12px
 }
 
-.modal-exit:hover {
+.modal-container .modal-exit:hover {
     background-color: #ccc;
     color: #000;
     cursor: pointer;
 }
 
-.modal-header {
+.modal-container .modal-header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -433,25 +432,25 @@ html {
     color: #fff;
     letter-spacing: 4px;
     font-size: 30px;
-    height: 130px;
+    line-height: 130px;
 }
 
-.modal-body {
+.modal-container .modal-body {
     font-size: 15px;
     padding: 0 16px;
 }   
 
-.modal-text {
+.modal-container .modal-text {
     margin: 15px 0;
 }
 
-.modal-input {
+.modal-container .modal-input {
     width: 100%;
     border: 1px solid #ccc;
     padding: 8px;
 }
 
-.modal-btn {
+.modal-container .modal-btn {
     font-size: 15px;
     width: 100%;
     margin: 15px 0;
@@ -461,18 +460,18 @@ html {
     padding: 16px 0;
 }   
 
-.modal-btn:hover {
+.modal-container .modal-btn:hover {
     background-color: #ccc;
     color: #000;
     cursor: pointer;
 }
 
-.modal-footer {
+.modal-container .modal-footer {
     padding: 0 16px;
     margin: 16px 0;
 }
 
-.modal-btn-exit {
+.modal-container .modal-btn-exit {
     background-color: #f44336;
     color: #fff;
     font-size: 15px;
@@ -480,24 +479,24 @@ html {
     padding: 10px 12px;
 }
 
-.modal-btn-exit:hover {
+.modal-container .modal-btn-exit:hover {
     background-color: #ccc;
     color: #000;
     cursor: pointer;
 }
 
-.modal-btn-exit  .ti-close {
+.modal-container .modal-btn-exit  .ti-close {
     font-size: 12px;
 
 }
 
-.modal-need-help  {
+.modal-container .modal-need-help  {
     display: inline;
     line-height: 37.6px;
     float: right;
 }
 
-.modal-need-help a {
+.modal-container .modal-need-help a {
     color: #2196F3;
 }
 
@@ -510,6 +509,6 @@ html {
 
     to {
         opacity: 1;
-        transform: translateY(-65px);
+        transform: translateY(0);
     }
 }
